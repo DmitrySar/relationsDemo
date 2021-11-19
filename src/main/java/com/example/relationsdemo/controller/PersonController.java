@@ -35,4 +35,11 @@ public class PersonController {
         personRepository.save(person);
 
     }
+
+    @GetMapping("/remperson")
+    public Person removePerson(@RequestParam int id) {
+        Person person = personRepository.findById(id).get();
+        personRepository.delete(person);
+        return person;
+    }
 }

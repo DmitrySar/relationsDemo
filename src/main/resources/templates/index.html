@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JPA Demo</title>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Demo JPA Relations</h1>
+        <a href="/h2">h2 console</a>
+        <a href="/persons">persons</a>
+        <a href="/jsondemo">JSON Demo</a>
+
+    </nav>
+</header>
+<div>
+    <h2>Add person</h2>
+    <form action="/addperson" method="get">
+        <input placeholder="lastname" type="text" name="lastname"><br>
+        <input placeholder="name" type="text" name="name"><br>
+        <input placeholder="surname" type="text" name="surname"><br>
+        <select name="gender">
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select><br>
+        Birthday:<input type="date" name="birthday"><br>
+        <input type="submit" value="add person">
+    </form>
+</div>
+<div>
+    <h2>Add Message</h2>
+    <form action="/addmessage" method="get">
+        <input placeholder="person id" type="number" name="personId"><br>
+        <input placeholder="title" type="text" name="title"><br>
+        <input placeholder="body" type="text" name="body"><br>
+        <input type="submit" value="add message">
+    </form>
+</div>
+<div>
+    <h2>Remove person</h2>
+    <form action="/remperson" method="get">
+        <input type="number" name="id">
+        <input type="submit" value="remove person">
+    </form>
+</div>
+</body>
+</html>
