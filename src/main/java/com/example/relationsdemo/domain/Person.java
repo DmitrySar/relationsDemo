@@ -20,7 +20,7 @@ public class Person {
     private String surname;
     private Gender gender;
     private LocalDate birthday;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Message> messages = new ArrayList<>();
 
     //конструктор с параметрами

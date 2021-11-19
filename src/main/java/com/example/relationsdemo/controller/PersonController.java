@@ -22,7 +22,7 @@ public class PersonController {
         return personRepository.findAll();
     }
 
-    @GetMapping("addperson")
+    @GetMapping("/addperson")
 //    RequestParam - получение данных по HTTP
     public void addPerson(@RequestParam String lastname,
                           @RequestParam String name,
@@ -34,5 +34,12 @@ public class PersonController {
         //Запись данных в БД
         personRepository.save(person);
 
+    }
+
+    @GetMapping("/remperson")
+    public Person removePerson(@RequestParam int id) {
+        Person person = personRepository.findById(id).orElse(new Person());
+        personRepository.delete(person);
+        return person;
     }
 }
