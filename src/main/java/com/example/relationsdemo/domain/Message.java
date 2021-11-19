@@ -1,5 +1,6 @@
 package com.example.relationsdemo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,9 +21,11 @@ public class Message {
     private String body;
     private LocalDateTime time;
     @ManyToOne
+    @JsonIgnore
     private Person person;
 
-    public Message(String title, String body, LocalDateTime time) {
+    public Message(Person person, String title, String body, LocalDateTime time) {
+        this.person = person;
         this.title = title;
         this.body = body;
         this.time = time;
